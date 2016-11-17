@@ -8,12 +8,12 @@ def PrisonerGame2P():
         def player1name():
                 print("Hello player 1.")
                 global name1
-                name1  =  input("What is your name? ")
+                name1  =  raw_input("What is your name? ")
         player1name()
         def player2name():
                 print("Hello player 2.")
                 global name2
-                name2  =  input("What is your name? ")
+                name2  =  raw_input("What is your name? ")
         player2name()
         def player1Choice():
                 global choice1
@@ -21,7 +21,7 @@ def PrisonerGame2P():
                 global name2
                 print("Listen, " + name1 + " We don't have enough evidence on you and your partner " + name2 + ". So, we want you to confess to us and in exchange we'll let you off easy.")
                 print("Will you confess?")
-                choice1 = input("Y/N")
+                choice1 = raw_input("Y/N ")
         player1Choice()
         def player2choice():
                 global choice2
@@ -29,7 +29,7 @@ def PrisonerGame2P():
                 global name2
                 print("Listen, " + name2 + " We don't have enough evidence on you and your partner " + name1 + ". So, we want you to confess to us and in exchange we'll let you off easy.")
                 print("Will you confess?")
-                choice2 = input("Y/N")
+                choice2 = raw_input("Y/N ")
         player2choice()
         def ending():
                 global choice1
