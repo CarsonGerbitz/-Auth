@@ -1,7 +1,7 @@
-def SBURBCLIENT():
+def SBURBHOST():
     import time
     import random
-    print("Welcome to Skaia Net's SBURB Client Program")
+    print("Welcome to Skaia Net's SBURB Host Program")
     print("You are currently running version 4.1.3")
     def wait(waittime):
         time.sleep(waittime)
@@ -19,19 +19,25 @@ def SBURBCLIENT():
     wait(.5)
     print("Hello " + Name0.upper() + " and welcome to SBURB!")
     wait(.5)
-    print("Please enter the IP address of your host's machine ")
+    print("Please enter the IP address of your client's machine ")
     wait(.5)
-    hostIP = input("HOST'S IP ")
+    clientIP = input("CLIENT'S IP ")
     wait(.5)
     print("Thanks!")
     wait(2)
     def hostping():
         import os
-        hostname = hostIP
-        response = os.system("ping -c 1 " + hostname)
+        clientname = clientIP
+        response = os.system("ping -c 1 " + clientname)
         if response == 0:
-            print(hostname, 'CONNECTION MADE!')
+            message = "Accecpt invite from " + name0 + "?"
+            UDP_PORT = 27015
+            print("CLIENT'S IP:", clientIP)
+            print("SBURB SERVICE PORT:", UDP_PORT)
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.sendto(bytes(MESSAGE, "utf-8"), (clientIP, UDP_PORT))
+            print(clientname, 'CONNECTION MADE!')
         else:
-            print(hostname, 'CONNECTION FAILED!')
+            print(clientname, 'CONNECTION FAILED!')
     hostping()
-SBURBCLIENT()
+SBURBHOST()
